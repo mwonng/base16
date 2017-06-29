@@ -69,9 +69,20 @@
         copy(css)
     })
 
-    document.getElementById('copy-formatted-css').addEventListener('click', function () {
-        
+    document.getElementById('copy-json').addEventListener('click', function () {
+        copy(JSON.stringify(getCSSAsObj(css), null, 2))
     })
+
+    document.getElementById('copy-txt').addEventListener('click', function () {
+        var text = '';
+        var obj = getCSSAsObj(css)
+        var keys = Object.keys(obj)
+        for (var i = 0; i < keys.length; i++) {
+            text += keys[i] + ' ' + obj[keys[i]] + '\n'
+        }
+        copy(text)
+    })
+
 
 
 

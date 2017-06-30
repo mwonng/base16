@@ -65,6 +65,13 @@
         return cssObj
     }
 
+    document.body.addEventListener('click', function (e) {
+        if (!e.target.classList.contains('block')) {
+            return
+        }
+        copy(getCSSAsObj(css)['base' + e.target.textContent])
+    })
+
     document.getElementById('copy-css').addEventListener('click', function () {
         copy(css)
     })

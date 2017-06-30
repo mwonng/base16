@@ -31,6 +31,12 @@ select {
   font-weight: bold;
   padding: 15px;
   margin: 0 5px 10px 0;
+  cursor: pointer;
+  user-select: none;
+}
+.block:active {
+  border: 1px solid white;
+  padding: 14px;
 }
 pre {
   font-size: 14px;
@@ -84,7 +90,6 @@ a {
 }
 
 .copy-btn {
-  /* font-size: 100%; */
   font-family: inherit;
   background: none;
   border: 1px solid #aaa;

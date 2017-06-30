@@ -7,6 +7,11 @@ body {
 body, .scheme, .author, pre, .block {
   font-family: "menlo", consolas, monospace;
 }
+
+select {
+  font-family: inherit;
+}
+
 .container {
   max-width: 56em;
   margin: 0 auto;

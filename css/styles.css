@@ -98,6 +98,10 @@ a {
   cursor: pointer;
 }
 
+.copy-btns {
+  display: inline-block;
+}
+
 .copy-btn:hover {
   color: #000;
   border-color: #888;

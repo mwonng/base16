@@ -51,7 +51,7 @@
     }
 
     function getCSSAsObj(css) {
-        var obj = {}
+        var cssObj = {}
         var lines = css.split('\n'),
             splittedLine;
         for (var i = 0; i < lines.length; i++) {
@@ -59,14 +59,22 @@
                 splittedLine = lines[i].split(':')
                 splittedLine[0] = splittedLine[0].substr(1, 6)
                 splittedLine[1] = splittedLine[1].substr(1, 7)
-                obj[splittedLine[0]] = splittedLine[1]
+                cssObj[splittedLine[0]] = splittedLine[1]
             }
         }
-        return obj
+        return cssObj
     }
 
     document.getElementById('copy-css').addEventListener('click', function () {
         copy(css)
+    })
+
+    document.getElementById('copy-formatted-css').addEventListener('click', function () {
+        var text = '', cssObj = getCSSAsObj(css), keys = Object.keys(cssObj)
+        for (var i = 0; i < keys.length; i++) {
+            text += '.' + keys[i] + ' { color: ' + cssObj[keys[i]] + '; }\n'
+        }
+        copy(text)
     })
 
     document.getElementById('copy-json').addEventListener('click', function () {
@@ -75,10 +83,10 @@
 
     document.getElementById('copy-txt').addEventListener('click', function () {
         var text = '';
-        var obj = getCSSAsObj(css)
-        var keys = Object.keys(obj)
+        var cssObj = getCSSAsObj(css)
+        var keys = Object.keys(cssObj)
         for (var i = 0; i < keys.length; i++) {
-            text += keys[i] + ' ' + obj[keys[i]] + '\n'
+            text += keys[i] + ' ' + cssObj[keys[i]] + '\n'
         }
         copy(text)
     })

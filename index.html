@@ -78,8 +78,15 @@
       <option value="base16-unikitty-dark.css">base16-unikitty-dark.css</option>
       <option value="base16-unikitty-light.css">base16-unikitty-light.css</option>
     </select>
+    <p class="copy-btns">
+      <button class="copy-btn" id="copy-css">Copy CSS</button>
+      <button class="copy-btn" id="copy-formatted-css">Copy Formatted CSS</button>
+      <button class="copy-btn" id="copy-json">Copy as JSON</button>
+      <button class="copy-btn" id="copy-txt">Copy as text</button>
+    </p>
     <h1 class="scheme"></h1>
     <div>
+      <p style="color: #888; font-size: 75%; font-style: italic;">Click on a color to copy its hex value.</p>
       <div class="block base00-background base07">00</div>
       <div class="block base01-background base07">01</div>
       <div class="block base02-background base07">02</div>
@@ -99,6 +106,7 @@
       <div class="block base0F-background base07">0F</div>
     </div>
     <div>
+    
       <pre class="base00-background base05">
 <span class="base0E">require</span> <span class="base0B">"gem"</span>
 

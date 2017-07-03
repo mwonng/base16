@@ -7,6 +7,11 @@ body {
 body, .scheme, .author, pre, .block {
   font-family: "menlo", consolas, monospace;
 }
+
+select {
+  font-family: inherit;
+}
+
 .container {
   max-width: 56em;
   margin: 0 auto;
@@ -26,6 +31,12 @@ body, .scheme, .author, pre, .block {
   font-weight: bold;
   padding: 15px;
   margin: 0 5px 10px 0;
+  cursor: pointer;
+  user-select: none;
+}
+.block:active {
+  border: 1px solid white;
+  padding: 14px;
 }
 pre {
   font-size: 14px;
@@ -76,4 +87,22 @@ a {
 .btn-close {
   background: transparent;
   color: transparent;
+}
+
+.copy-btn {
+  font-family: inherit;
+  background: none;
+  border: 1px solid #aaa;
+  border-radius: 2px;
+  color: #333;
+  cursor: pointer;
+}
+
+.copy-btns {
+  display: inline-block;
+}
+
+.copy-btn:hover {
+  color: #000;
+  border-color: #888;
 }
